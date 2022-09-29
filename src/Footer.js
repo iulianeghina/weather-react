@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       This project was coded by <span>Iulia Neghina</span> and is
       <a
-        href="https://github.com/iulianeghina/weather-app"
+        href="https://github.com/iulianeghina/weather-react"
         target="_blank"
         rel="noreferrer"
       >
@@ -13,7 +13,7 @@ export default function Footer() {
       </a>
       and
       <a
-        href="https://dulcet-kleicha-0d4357.netlify.app/"
+        href="https://lustrous-baklava-edc2b1.netlify.app/"
         target="_blank"
         rel="noreferrer"
       >
