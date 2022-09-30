@@ -9,9 +9,10 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        open-sourced on GitHub
+        {" "}
+        open-sourced on GitHub{" "}
       </a>
-      and
+      and{" "}
       <a
         href="https://lustrous-baklava-edc2b1.netlify.app/"
         target="_blank"

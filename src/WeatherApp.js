@@ -1,5 +1,3 @@
-import "./styles.css";
-
 import TodayWeatherDetail from "./TodayWeatherDetail";
 import NextDaysForecast from "./5DaysForecast";
 import Footer from "./Footer";
