@@ -18,6 +18,7 @@ export default function WeatherApp(props) {
       maxTemp: response.data.main.temp_max,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      timezone: response.data.timezone,
     });
   }
 
@@ -84,6 +85,7 @@ export default function WeatherApp(props) {
                     max={weatherResponse.maxTemp}
                     humidity={weatherResponse.humidity}
                     wind={weatherResponse.wind}
+                    timezone={weatherResponse.timezone}
                   />
                 </div>
                 <NextDaysForecast />

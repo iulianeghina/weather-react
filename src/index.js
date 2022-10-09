@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import WeatherApp from "./WeatherApp";
 import reportWebVitals from "./reportWebVitals";
@@ -8,7 +8,7 @@ import "./css.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <WeatherApp defaultCity="London"/>
+    <WeatherApp defaultCity="Bucharest" />
   </React.StrictMode>
 );
 

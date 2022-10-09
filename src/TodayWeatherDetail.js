@@ -1,11 +1,11 @@
 import React from "react";
+import TodayTimeAndDate from "./TodayTimeAndDate";
 
 export default function TodayWeatherDetail(props) {
   return (
     <div className="row">
       <div className="col-10">
-        <h4 id="today-time">Sunday 13:37</h4>
-        <h6 id="actual-date">11/09/2022</h6>
+        <TodayTimeAndDate timezone={props.timezone} />
         <div className="row">
           <div className="col-6">
             <ul className="min-max">
