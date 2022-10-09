@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TodayWeatherDetail() {
+export default function TodayWeatherDetail(props) {
   return (
     <div className="row">
       <div className="col-10">
@@ -9,14 +9,14 @@ export default function TodayWeatherDetail() {
         <div className="row">
           <div className="col-6">
             <ul className="min-max">
-              <li id="min">min 7°</li>
-              <li id="max">max 18°</li>
+              <li id="min">min {Math.round(props.min)}°</li>
+              <li id="max">max {Math.round(props.max)}°</li>
             </ul>
           </div>
           <div className="col-6">
             <ul className="humidity-wind">
-              <li id="humidity">humidity 5%</li>
-              <li id="wind">wind 2km/h</li>
+              <li id="humidity">humidity {props.humidity}%</li>
+              <li id="wind">wind {Math.round(props.wind)}km/h</li>
             </ul>
           </div>
         </div>
