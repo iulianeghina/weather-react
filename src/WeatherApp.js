@@ -4,6 +4,7 @@ import TodayWeatherDetail from "./TodayWeatherDetail";
 import NextDaysForecast from "./5DaysForecast";
 import Footer from "./Footer";
 import WeatherIcon from "./WeatherIcon";
+import WeatherSummary from "./WeatherSummary";
 
 export default function WeatherApp(props) {
   const [weatherResponse, setWeatherResponse] = useState({ ready: false });
@@ -63,13 +64,12 @@ export default function WeatherApp(props) {
                       />
                     </div>
                     <div className="search-button">
-                      <button
-                        type="button"
-                        className="btn btn-primary float-right current-button"
-                        id="current-location-button"
-                      >
-                        Current
-                      </button>
+                      <input
+                        type="submit"
+                        value="Search"
+                        className="btn btn-primary float-right search-city-button"
+                        id="search-button"
+                      />
                     </div>
                   </form>
                   <div className="info">
@@ -78,21 +78,11 @@ export default function WeatherApp(props) {
                         {weatherResponse.city}
                       </div>
                       <div className="col-sm-6 icon">
-                        <WeatherIcon code={weatherResponse.icon}/>
-                        <ul className="summary">
-                          <li
-                            className="condition text-capitalize"
-                            id="condition"
-                          >
-                            {weatherResponse.description}
-                          </li>
-                          <li className="temperature">
-                            <span id="degrees">
-                              {Math.round(weatherResponse.temperature)}
-                            </span>{" "}
-                            °C
-                          </li>
-                        </ul>
+                        <WeatherIcon code={weatherResponse.icon} />
+                        <WeatherSummary
+                          celsius={weatherResponse.temperature}
+                          description={weatherResponse.description}
+                        />
                       </div>
                     </div>
                   </div>

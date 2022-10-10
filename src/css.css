@@ -37,7 +37,7 @@ ul {
   width: 85%;
   background-color: #e6f7f7;
 }
-.current-button {
+.search-city-button {
   line-height: 1.55;
   padding: 0.375rem 1.2rem;
   position: relative;
@@ -74,6 +74,14 @@ ul {
 .temperature {
   font-size: 30px;
   list-style: none;
+}
+.unit {
+  font-size: 15px;
+  position: relative;
+  bottom: 10px;
+}
+.unit a {
+  text-decoration: none;
 }
 .celsius-fahrenheit {
   font-size: 10px;
@@ -161,7 +169,7 @@ footer {
     flex: 0 0 auto;
     padding-bottom: 5px;
   }
-  .current-button {
+  .search-city-button {
     line-height: 1.55;
     padding: 10px 65px;
     position: relative;
