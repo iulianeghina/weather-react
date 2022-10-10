@@ -3,6 +3,7 @@ import axios from "axios";
 import TodayWeatherDetail from "./TodayWeatherDetail";
 import NextDaysForecast from "./5DaysForecast";
 import Footer from "./Footer";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherApp(props) {
   const [weatherResponse, setWeatherResponse] = useState({ ready: false });
@@ -12,8 +13,8 @@ export default function WeatherApp(props) {
       ready: true,
       city: response.data.name,
       temperature: response.data.main.temp,
-      description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      description: response.data.weather[0].main,
+      icon: response.data.weather[0].icon,
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,
       humidity: response.data.main.humidity,
@@ -77,12 +78,7 @@ export default function WeatherApp(props) {
                         {weatherResponse.city}
                       </div>
                       <div className="col-sm-6 icon">
-                        <img
-                          className="image"
-                          id="icon"
-                          src={weatherResponse.iconUrl}
-                          alt="weather icon"
-                        />
+                        <WeatherIcon code={weatherResponse.icon}/>
                         <ul className="summary">
                           <li
                             className="condition text-capitalize"

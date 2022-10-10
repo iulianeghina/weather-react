@@ -58,17 +58,17 @@ ul {
   border-right: 1px solid blue;
   font-size: 40px;
   position: relative;
-  height: 50px;
+  height: 64px;
 }
 .icon {
   font-size: 35px;
   position: relative;
-  height: 50px;
+  height: 64px;
 }
 .summary {
   position: relative;
-  bottom: 120px;
-  left: 90px;
+  bottom: 91px;
+  left: 86px;
 }
 .condition,
 .temperature {
