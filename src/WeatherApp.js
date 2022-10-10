@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 export default function WeatherApp(props) {
   const [weatherResponse, setWeatherResponse] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleRequest(response) {
     setWeatherResponse({
       ready: true,
@@ -22,6 +22,21 @@ export default function WeatherApp(props) {
     });
   }
 
+  function search(city) {
+    const apiKey = "faa261b304bfc269bca49770138629cd";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleRequest);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherResponse.ready) {
     return (
       <div className="my-weather-app">
@@ -30,7 +45,11 @@ export default function WeatherApp(props) {
             <div className="weather">
               <div className="row">
                 <div className="col-8 main-output">
-                  <form className="search-form" id="search-city">
+                  <form
+                    className="search-form"
+                    id="search-city"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="form-group">
                       <input
                         autoComplete="off"
@@ -39,6 +58,7 @@ export default function WeatherApp(props) {
                         placeholder="Enter city"
                         autoFocus="on"
                         id="enter-city"
+                        onChange={handleCityChange}
                       />
                     </div>
                     <div className="search-button">
@@ -97,10 +117,7 @@ export default function WeatherApp(props) {
       </div>
     );
   } else {
-    const apiKey = "faa261b304bfc269bca49770138629cd";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleRequest);
-
+    search(city);
     return <h1>Loading...</h1>;
   }
 }
