@@ -65,6 +65,10 @@ ul {
   position: relative;
   height: 64px;
 }
+.icon-forecast {
+  position: relative;
+  top: 6px;
+}
 .summary {
   position: relative;
   bottom: 91px;

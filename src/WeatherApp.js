@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import TodayWeatherDetail from "./TodayWeatherDetail";
-import NextDaysForecast from "./5DaysForecast";
+import NextDaysForecast from "./NextDaysForecast";
 import Footer from "./Footer";
 import WeatherIcon from "./WeatherIcon";
 import WeatherSummary from "./WeatherSummary";
@@ -12,6 +12,7 @@ export default function WeatherApp(props) {
   function handleRequest(response) {
     setWeatherResponse({
       ready: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].main,
@@ -78,7 +79,7 @@ export default function WeatherApp(props) {
                         {weatherResponse.city}
                       </div>
                       <div className="col-sm-6 icon">
-                        <WeatherIcon code={weatherResponse.icon} />
+                        <WeatherIcon code={weatherResponse.icon} size={64} />
                         <WeatherSummary
                           celsius={weatherResponse.temperature}
                           description={weatherResponse.description}
@@ -94,7 +95,7 @@ export default function WeatherApp(props) {
                     timezone={weatherResponse.timezone}
                   />
                 </div>
-                <NextDaysForecast />
+                <NextDaysForecast coordinates={weatherResponse.coordinates} />
               </div>
               <Footer />
             </div>
