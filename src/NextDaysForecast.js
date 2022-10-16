@@ -15,7 +15,7 @@ export default function NextDaysForecast(props) {
     setResponse(response.data.daily);
     setForecast(true);
   }
-  console.log(response);
+
   if (forecast) {
     return (
       <div className="col-4">

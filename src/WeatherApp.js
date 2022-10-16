@@ -93,6 +93,7 @@ export default function WeatherApp(props) {
                     humidity={weatherResponse.humidity}
                     wind={weatherResponse.wind}
                     timezone={weatherResponse.timezone}
+                    coordinates={weatherResponse.coordinates}
                   />
                 </div>
                 <NextDaysForecast coordinates={weatherResponse.coordinates} />
